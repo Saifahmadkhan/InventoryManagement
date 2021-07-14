@@ -1,10 +1,11 @@
 package in.bala.inventory.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Cart {
     private int id;
-    private Set<Product> products;
+    private Set<Product> products=new HashSet<>();
 
     public Cart() {
     }
@@ -30,6 +31,13 @@ public class Cart {
         this.products = products;
     }
 
+    public void addProduct(Product p,int quantity){
+        products.add(new Product(p.getId(),p.getName(),p.getPrice(),quantity));
+    }
+
+    public Set<Product> getAllProducts(){
+        return products;
+    }
     @Override
     public String toString() {
         return "Cart{" +

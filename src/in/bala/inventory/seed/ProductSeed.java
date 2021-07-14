@@ -13,8 +13,8 @@ public class ProductSeed {
         productList.add(new Product(101,"Lemon",25d,190));
         productList.add(new Product(102,"Apple",160d,50));
         productList.add(new Product(103,"Banana",15d,190));
-        productList.add(new Product(101,"Mango",36,290));
-        productList.add(new Product(101,"JackFruit",15d,500));
+        productList.add(new Product(104,"Mango",36,290));
+        productList.add(new Product(105,"JackFruit",15d,500));
         productRepo.addAllProduct(productList);
         return  productRepo;
     }
