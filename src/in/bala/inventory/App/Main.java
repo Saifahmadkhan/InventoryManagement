@@ -1,6 +1,7 @@
 package in.bala.inventory.App;
 
 import in.bala.inventory.controller.CartController;
+import in.bala.inventory.controller.OrderController;
 import in.bala.inventory.controller.ProductController;
 import in.bala.inventory.model.Product;
 import in.bala.inventory.repository.ProductRepository;
@@ -15,12 +16,14 @@ public class Main {
         Scanner scan=new Scanner(System.in);
         ProductController pc=new ProductController() ;
         CartController cc=new CartController() ;
+        OrderController oc=new OrderController();
         while(true) {
             System.out.println("Menu");
             System.out.println("1. Get All Products\n"+
                                "2. Add Product to Cart\n"+
                                "3. View Cart Summary\n"+
-                               "4. Checkout and Order\n"+
+                               "4. Checkout and Order\n" +
+                               "5. View past Order\n"+
                                "Press 0 for EXIT");
             int option=Integer.parseInt(scan.nextLine());
 
@@ -61,7 +64,17 @@ public class Main {
 
                 case 4:
                     //Convert Order
+                    System.out.println("Order placed successfully");
+                    System.out.println("Your ORDER SUMMARY");
+                    oc.checkout(pc,cc);
                     break;
+
+                case 5:
+                    //order summary
+                    System.out.println("PAST ORDERS");
+                    oc.getOrderSummary();
+                    break;
+
                 default:
                     option=0;
             }
@@ -72,3 +85,9 @@ public class Main {
 
     }
 }
+
+//   REMOVE EMPTY CART CHECKOUT
+//   REMOVE EMPTY CART CHECKOUT
+//   REMOVE EMPTY CART CHECKOUT
+//   REMOVE EMPTY CART CHECKOUT
+//   REMOVE EMPTY CART CHECKOUT

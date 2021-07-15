@@ -1,11 +1,12 @@
 package in.bala.inventory.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Order {
     private int orderId;
     private String customer_name;
-    private Set<Product> products;
+    private Set<Product> products=new HashSet<>();
 
     public Order() {
     }

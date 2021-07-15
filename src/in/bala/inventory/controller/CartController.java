@@ -31,4 +31,12 @@ public class CartController {
             System.out.println(p.toString());
         }
     }
+
+    public Set<Product> getAllProducts(){
+        return cart.getAllProducts();
+    }
+
+    public void makeEmpty(){
+        cart=new Cart();
+    }
 }
